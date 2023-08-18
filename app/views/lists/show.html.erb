@@ -1,14 +1,23 @@
-<h1> <%= @list.name %> </h1>
-
-<% @list.bookmarks.each do |bookmark| %>
-<div class="card-trip">
-  <img src= "<%= bookmark.movie.poster_url %>"/>
-  <div class="card-trip-infos">
-    <div>
-      <h3><%= bookmark.movie.title %></h3>
-      <p><%= bookmark.movie.overview%></p>
-      <p>my comment: <strong><%= bookmark.comment %></strong></p>
-    </div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @list.photo.key, height: 300, width: 400, crop: :fill %>);">
+  <div class="container">
+    <h1> <%= @list.name %> </h1>
+    <%= link_to "add bookmark", new_list_bookmark_path(@list) %>
   </div>
 </div>
-<% end %>
+
+<div class="container">
+  <div class="cards">
+    <% @list.bookmarks.each do |bookmark| %>
+    <div class="card-trip">
+      <img src= "<%= bookmark.movie.poster_url %>"/>
+      <div class="card-trip-infos">
+        <div>
+          <h3><%= bookmark.movie.title %></h3>
+          <p><%= bookmark.movie.overview%></p>
+          <p>my comment: <strong><%= bookmark.comment %></strong></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
