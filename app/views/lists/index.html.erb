@@ -1,0 +1,26 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.grandsierraresort.com/hubfs/recreation/Grand-Sierra-Cinema-view-of-auditorium_q085_1920x1080.jpg);">
+  <div class="container">
+    <h1> My Movies lists</h1>
+    <p>Find your lists below</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <h2>My lists</h2>
+    </div>
+    <div class="col-4">
+    <button type="button" class="btn btn-success"><%= link_to 'Add new list', new_list_path %></button>
+    </div>
+  </div>
+</div>
+
+<div class="cards">
+<% @lists.each do |list| %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  <%= list.name %>
+  </div>
+<% end %>
+</div>
