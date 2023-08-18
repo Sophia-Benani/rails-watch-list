@@ -19,7 +19,8 @@
 
 <div class="cards">
 <% @lists.each do |list| %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  <div class="card-category" style="<%= cl_image_tag("nf8lhqyl4g2lizfb1vfn",
+      width: 400, height: 300, crop: :fill) %>">
   <%= list.name %>
   </div>
 <% end %>
